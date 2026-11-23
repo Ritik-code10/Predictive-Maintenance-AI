@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">⚙ PREDICT AI</div>
+        <span class="live-status">● SYSTEM ONLINE</span>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div>
+                <p class="eyebrow">INDUSTRIAL INTELLIGENCE PLATFORM</p>
+                <h1>Predictive Maintenance<br>Intelligence System</h1>
+                <p class="subtitle">
+                    AI-powered machine failure risk monitoring
+                </p>
+            </div>
+
+            <div class="machine-card">
+                <div id="machine-3d"></div>
+                <p>3D MACHINE VISUALIZATION</p>
+            </div>
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+                <h2>Machine Sensor Parameters</h2>
+                <p class="muted">Enter machine operating conditions</p>
+
+                <form id="prediction-form">
+
+                    <label>Machine Type</label>
+                    <select id="machine_type">
+                        <option value="L">Low (L)</option>
+                        <option value="M">Medium (M)</option>
+                        <option value="H">High (H)</option>
+                    </select>
+
+                    <label>Air Temperature (K)</label>
+                    <input id="air_temperature" type="number"
+                           value="300" step="any" required>
+
+                    <label>Process Temperature (K)</label>
+                    <input id="process_temperature" type="number"
+                           value="310" step="any" required>
+
+                    <label>Rotational Speed (RPM)</label>
+                    <input id="rotational_speed" type="number"
+                           value="1500" required>
+
+                    <label>Torque (Nm)</label>
+                    <input id="torque" type="number"
+                           value="40" step="any" required>
+
+                    <label>Tool Wear (minutes)</label>
+                    <input id="tool_wear" type="number"
+                           value="100" required>
+
+                    <button type="submit" id="predict-btn">
+                        ANALYZE MACHINE →
+                    </button>
+
+                </form>
+            </div>
+
+            <div class="panel result-panel">
+                <h2>AI Prediction Results</h2>
+                <p class="muted">Machine health assessment</p>
+
+                <div id="result" class="result-box">
+                    <div class="result-icon">⚙</div>
+                    <h3>Waiting for Analysis</h3>
+                    <p>Enter sensor readings and analyze your machine.</p>
+                </div>
+
+                <div class="metric">
+                    <span>Failure Score</span>
+                    <strong id="failure-score">--</strong>
+                </div>
+
+                <div class="metric">
+                    <span>Decision Threshold</span>
+                    <strong id="threshold">11.67%</strong>
+                </div>
+
+                <div id="error-message"></div>
+            </div>
+
+            </section>
+
+        <!-- MACHINE STATUS SECTION -->
+        <section class="machine-status">
+
+            <div class="status-heading">
+                <h3>INDUSTRIAL MACHINE STATUS</h3>
+                <span class="online-badge" id="app-status">
+                    CHECKING...
+                </span>
+            </div>
+
+            <div class="status-grid">
+
+                <div class="status-item">
+                    <div class="status-icon">⚙️</div>
+                    <h4 id="application-status">CHECKING...</h4>
+                    <p>Application Status</p>
+                </div>
+
+                <div class="status-item">
+                    <div class="status-icon">🧠</div>
+                    <h4 id="model-status">LOADED</h4>
+                    <p>ML Model</p>
+                </div>
+
+                <div class="status-item">
+                    <div class="status-icon">🌐</div>
+                    <h4 id="api-status">CHECKING...</h4>
+                    <p>API Connection</p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            Predict AI | Machine Learning Powered Predictive Maintenance
+        </footer>
+
+    </main>
+
+    <script type="module" src="/static/script.js"></script>
+</body>
+</html>
